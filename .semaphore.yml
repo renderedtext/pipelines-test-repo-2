@@ -1,0 +1,12 @@
+version: "2.0"
+name: single stage
+semaphore_image: "docker"
+stages:
+  - name: only stage
+    jobs:
+      - name: first job
+        cmds:
+          - echo foo
+          - echo bar
+      - cmds:
+          - echo baz
