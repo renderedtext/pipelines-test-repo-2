@@ -1,12 +1,8 @@
 version: "v1.0"
-name: single stage
+name: auto call repo
 semaphore_image: "docker"
-stages:
-  - name: only stage
-    jobs:
-      - name: first job
-        cmds:
-          - echo foo
-          - echo bar
-      - cmds:
-          - echo baz
+build:
+  jobs:
+    - name: first job
+      commands:
+        - echo foo
