@@ -5,4 +5,4 @@ build:
   jobs:
     - name: first job
       commands:
-        - echo foo
+        - echo First and only command from 'pipelines-test-repo-auto-call' repo
