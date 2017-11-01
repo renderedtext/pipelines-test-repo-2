@@ -1,9 +1,23 @@
-version: "v1.0"
-name: auto call repo
+version: "v3.0"
+name: v2 failing pipeline
 semaphore_image: "docker"
-build:
-  jobs:
-    - name: first job
-      commands:
-        - echo First and only command from 'pipelines-test-repo-auto-call' repo
-          echo "Another command from 'pipelines-test-repo-auto-call'"
+blocks:
+  - name: block1
+    build:
+      jobs:
+        - name: job1
+          commands:
+            - echo foo
+            - echo bar
+        - name: job2
+          commands:
+            - echo baz
+  - name: block2
+    build:
+      jobs:
+        - name: failing job
+          commands:
+            - exit 127
+        - name: job2
+          commands:
+            - echo baz
