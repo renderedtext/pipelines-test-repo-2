@@ -1,10 +1,7 @@
 version: "v1.0"
-name: auto call repo
+name: Basic GH repo test in non-default-branch
 semaphore_image: "docker"
-blocks:
-  - build:
-    jobs:
-      - name: first job
-        commands:
-          - echo First and only command from 'pipelines-test-repo-auto-call' repo
-            echo "Another command from 'pipelines-test-repo-auto-call'"
+build:
+  jobs:
+    - commands:
+        - echo Command in non-default-branch
