@@ -3,8 +3,8 @@ name: auto call repo
 semaphore_image: "docker"
 blocks:
   - build:
-    jobs:
-      - name: first job
-        commands:
-          - echo First and only command from 'pipelines-test-repo-auto-call' repo
-            echo "Another command from 'pipelines-test-repo-auto-call'"
+      jobs:
+        - name: first job
+          commands:
+            - echo First and only command from 'pipelines-test-repo-auto-call' repo
+              echo "Another command from 'pipelines-test-repo-auto-call'"
