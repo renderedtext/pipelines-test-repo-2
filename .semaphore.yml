@@ -1,7 +1,9 @@
 version: "v1.0"
 name: Basic GH repo test in non-default-branch
 semaphore_image: "docker"
-build:
-  jobs:
-    - commands:
-        - echo Command in non-default-branch
+blocks:
+  - build:
+      jobs:
+        - name: First job
+          commands:
+            - echo Command in non-default-branch
