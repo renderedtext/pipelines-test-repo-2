@@ -1,10 +1,11 @@
 version: "v1.0"
 name: auto call repo
-semaphore_image: "docker"
+semaphore_image: "standard"
 blocks:
-  - build:
+  - name: First block
+    build:
       jobs:
         - name: first job
           commands:
-            - echo First and only command from 'pipelines-test-repo-auto-call' repo
-              echo "Another command from 'pipelines-test-repo-auto-call'"
+            - echo "First and only command from 'pipelines-test-repo-auto-call' repo"
+            - echo "Another command from 'pipelines-test-repo-auto-call'"
