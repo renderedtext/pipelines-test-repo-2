@@ -1,5 +1,5 @@
 version: "v3.0"
-name: Initial Pipeline
+name: Extension pipeline
 semaphore_image: "docker"
 blocks:
   - name: block1
