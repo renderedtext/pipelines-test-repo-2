@@ -1,0 +1,14 @@
+version: "v1.0"
+name: Staging deploy
+semaphore_image: "docker"
+blocks:
+  - name: Block 1 stg
+    build:
+      jobs:
+        - name: job1 stg
+          commands:
+            - echo foo
+            - echo bar
+        - name: job2 stg
+          commands:
+            - echo baz

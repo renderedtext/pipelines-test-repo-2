@@ -3,10 +3,10 @@ name: v2 failing pipeline
 semaphore_image: "docker"
 switch:
 - name: stg
-  pipeline_path: "./stg.yml"
+  pipeline_path: "./.stg.yml"
   auto: true
 - name: prod
-  pipeline_path: "./prod.yml"
+  pipeline_path: "./.prod.yml"
 blocks:
   - name: block1
     build:
