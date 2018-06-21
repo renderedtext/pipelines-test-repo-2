@@ -1,0 +1,14 @@
+version: "v1.0"
+name: Prod deploy
+semaphore_image: "docker"
+blocks:
+  - name: Block 1 prod
+    build:
+      jobs:
+        - name: job1 prod
+          commands:
+            - echo foo
+            - echo bar
+        - name: job2 prod
+          commands:
+            - echo baz
