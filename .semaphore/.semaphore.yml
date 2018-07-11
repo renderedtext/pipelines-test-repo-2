@@ -3,7 +3,7 @@ name: Initial Pipeline
 semaphore_image: "docker"
 blocks:
   - name: block1
-    build:
+    task:
       jobs:
         - name: job1
           commands:
@@ -13,7 +13,7 @@ blocks:
           commands:
             - echo baz
   - name: block2
-    build:
+    task:
       boosters:
         - name: family_of_boosted_jobs_1
           type: cucumber
