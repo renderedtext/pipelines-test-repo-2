@@ -3,7 +3,7 @@ name: auto call repo
 semaphore_image: "standard"
 blocks:
   - name: First block
-    build:
+    task:
       jobs:
         - name: first job
           commands:
