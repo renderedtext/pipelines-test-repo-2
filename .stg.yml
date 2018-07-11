@@ -3,7 +3,7 @@ name: Staging deploy
 semaphore_image: "docker"
 blocks:
   - name: Block 1 stg
-    build:
+    task:
       jobs:
         - name: job1 stg
           commands:

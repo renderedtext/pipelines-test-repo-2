@@ -9,7 +9,7 @@ switch:
     pipeline_path: "./.prod.yml"
 blocks:
   - name: block1
-    build:
+    task:
       jobs:
         - name: job1
           commands:
@@ -19,7 +19,7 @@ blocks:
           commands:
             - echo baz
   - name: block2
-    build:
+    task:
       jobs:
         - name: job1
           commands:

@@ -3,7 +3,7 @@ name: Prod deploy
 semaphore_image: "docker"
 blocks:
   - name: Block 1 prod
-    build:
+    task:
       jobs:
         - name: job1 prod
           commands:
