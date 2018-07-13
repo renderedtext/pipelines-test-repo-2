@@ -4,7 +4,13 @@ semaphore_image: "docker"
 switch:
 - name: stg
   pipeline_path: "./.stg.yml"
-  auto: true
+  auto_trigger_on:
+    - result: passed
+      branch:
+        - "v2-valid."
+    - result: failed
+      branch:
+        - "v2-failing."
 - name: prod
   pipeline_path: "./.prod.yml"
 blocks:
