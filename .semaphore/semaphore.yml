@@ -11,8 +11,8 @@ switch:
     - result: failed
       branch:
         - "v2-failing."
-  - name: prod
-    pipeline_path: "./.prod.yml"
+- name: prod
+  pipeline_path: "./.prod.yml"
 blocks:
   - name: block1
     task:
