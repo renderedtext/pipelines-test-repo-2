@@ -1,6 +1,9 @@
 version: "v1.0"
 name: v2 failing pipeline
-semaphore_image: "docker"
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
 switch:
 - name: stg
   pipeline_path: "./.stg.yml"
