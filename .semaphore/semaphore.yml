@@ -1,6 +1,9 @@
 version: "v1.0"
 name: auto call repo
-semaphore_image: "standard"
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
 blocks:
   - name: First block
     task:
