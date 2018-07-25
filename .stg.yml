@@ -1,6 +1,9 @@
 version: "v1.0"
 name: Staging deploy
-semaphore_image: "docker"
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
 blocks:
   - name: Block 1 stg
     task:
