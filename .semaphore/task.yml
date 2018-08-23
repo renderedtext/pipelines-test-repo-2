@@ -1,0 +1,5 @@
+jobs:
+- name: first job
+  commands:
+  - echo "Job from task file"
+
