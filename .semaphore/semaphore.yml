@@ -4,7 +4,7 @@ agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
-switch:
+promotions:
 - name: stg
   pipeline_path: "./.stg.yml"
   auto_trigger_on:
