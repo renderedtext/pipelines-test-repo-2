@@ -1,9 +1,13 @@
-version: "v3.0"
+version: "v1.0"
 name: Extension pipeline
-semaphore_image: "docker"
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
 blocks:
   - name: block1
-    build:
+    task:
       jobs:
         - name: job1
           commands:
@@ -13,7 +17,7 @@ blocks:
           commands:
             - echo baz
   - name: block2
-    build:
+    task:
       boosters:
         - name: family_of_boosted_jobs_1
           type: cucumber
