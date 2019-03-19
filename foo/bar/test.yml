@@ -18,10 +18,8 @@ blocks:
             - echo baz
   - name: block2
     task:
-      boosters:
-        - name: family_of_boosted_jobs_1
-          type: cucumber
-          job_count: 2
-        - type: rspec
-          name: family_of_boosted_jobs_2
-          job_count: 3
+      jobs:
+        - name: job1
+          commands:
+            - echo foo
+            - echo bar
