@@ -10,3 +10,9 @@ blocks:
         - name: First job
           commands:
             - echo Command in non-default-branch
+  - task:
+      jobs:
+        - name: Second job
+          commands:
+            - echo Command from second block
+
