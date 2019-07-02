@@ -9,6 +9,7 @@ blocks:
     task:
       jobs:
         - name: first job
+          parallelism: 4
           commands:
-            - echo "First and only command from 'pipelines-test-repo-auto-call' repo"
-            - echo "Another command from 'pipelines-test-repo-auto-call'"
+            - echo "SEMAPHORE_JOB_INDEX = $SEMAPHORE_JOB_INDEX"
+            - echo "SEMAPHORE_JOB_COUNT = $SEMAPHORE_JOB_COUNT"
