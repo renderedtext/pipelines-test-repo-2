@@ -5,11 +5,24 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: First block
+  - name: A  
+    dependencies: ["C"]
     task:
       jobs:
         - name: first job
-          parallelism: 4
           commands:
-            - echo "SEMAPHORE_JOB_INDEX = $SEMAPHORE_JOB_INDEX"
-            - echo "SEMAPHORE_JOB_COUNT = $SEMAPHORE_JOB_COUNT"
+            - echo A
+  - name: B
+    dependencies: ["A"]
+    task:
+      jobs:
+        - name: first job
+          commands:
+            - echo B
+  - name: C
+    dependencies: ["B"]
+    task:
+      jobs:
+        - name: first job
+          commands:
+            - echo C
