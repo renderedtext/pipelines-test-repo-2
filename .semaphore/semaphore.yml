@@ -10,5 +10,4 @@ blocks:
       jobs:
         - name: first job
           commands:
-            - echo "First and only command from 'pipelines-test-repo-auto-call' repo"
-            - echo "Another command from 'pipelines-test-repo-auto-call'"
+            - sleep 45
