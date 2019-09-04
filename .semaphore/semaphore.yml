@@ -4,13 +4,31 @@ agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
-auto_cancel:
-  running:
+fail_fast:
+  stop:
     when: true
 blocks:
   - name: First block
+    dependecies: []
     task:
       jobs:
         - name: first job
           commands:
-            - sleep 45
+            - sleep 15
+            - echo 123
+  - name: Second block
+    dependecies: []
+    task:
+      jobs:
+        - name: first job
+          commands:
+            - sleep 15
+            - echo 123
+  - name: Third block
+    dependecies: []
+    task:
+      jobs:
+        - name: first job
+          commands:
+            - sleep 5
+            - false
