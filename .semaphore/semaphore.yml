@@ -1,4 +1,4 @@
-version: "v1.0"
+version: v1.0
 name: auto call repo
 agent:
   machine:
@@ -15,7 +15,13 @@ blocks:
         - name: first job
           commands:
             - sleep 35
-            - echo 123   
+            - echo 123
+            - sleep 10
+            - echo asdf
+        - name: 'Job #2'
+          commands:
+            - sleep 35
+            - echo 123
             - sleep 10
             - echo asdf
   - name: Second block
@@ -25,7 +31,13 @@ blocks:
         - name: first job
           commands:
             - sleep 35
-            - echo 123   
+            - echo 123
+            - sleep 10
+            - echo asdf
+        - name: 'Job #2'
+          commands:
+            - sleep 35
+            - echo 123
             - sleep 10
             - echo asdf
   - name: Third block
@@ -36,3 +48,15 @@ blocks:
           commands:
             - sleep 5
             - exit 123
+        - name: 'Job #2'
+          commands:
+            - sleep 35
+            - echo 123
+            - sleep 10
+            - echo asdf
+        - name: 'Job #3'
+          commands:
+            - sleep 35
+            - echo 123
+            - sleep 10
+            - echo asdf
