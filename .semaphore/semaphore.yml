@@ -14,16 +14,20 @@ blocks:
       jobs:
         - name: first job
           commands:
-            - sleep 15
-            - echo 123
+            - sleep 35
+            - echo 123   
+            - sleep 10
+            - echo asdf
   - name: Second block
     dependencies: []
     task:
       jobs:
         - name: first job
           commands:
-            - sleep 15
-            - echo 123
+            - sleep 35
+            - echo 123   
+            - sleep 10
+            - echo asdf
   - name: Third block
     dependencies: []
     task:
