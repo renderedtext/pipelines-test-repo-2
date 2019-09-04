@@ -9,7 +9,7 @@ fail_fast:
     when: true
 blocks:
   - name: First block
-    dependecies: []
+    dependencies: []
     task:
       jobs:
         - name: first job
@@ -17,7 +17,7 @@ blocks:
             - sleep 15
             - echo 123
   - name: Second block
-    dependecies: []
+    dependencies: []
     task:
       jobs:
         - name: first job
@@ -25,10 +25,10 @@ blocks:
             - sleep 15
             - echo 123
   - name: Third block
-    dependecies: []
+    dependencies: []
     task:
       jobs:
         - name: first job
           commands:
             - sleep 5
-            - false
+            - exit 123
