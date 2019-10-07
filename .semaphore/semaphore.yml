@@ -22,3 +22,8 @@ blocks:
           commands:
             - echo foo
             - echo bar
+promotions:
+  - name: Test promotion
+    pipeline_file: "/foo/bar/test.yml"
+    auto_promote: 
+      when: true
