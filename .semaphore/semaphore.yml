@@ -4,59 +4,10 @@ agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
-fail_fast:
-  stop:
-    when: true
 blocks:
   - name: First block
-    dependencies: []
     task:
       jobs:
         - name: first job
           commands:
-            - sleep 35
-            - echo 123
-            - sleep 10
-            - echo asdf
-        - name: 'Job #2'
-          commands:
-            - sleep 35
-            - echo 123
-            - sleep 10
-            - echo asdf
-  - name: Second block
-    dependencies: []
-    task:
-      jobs:
-        - name: first job
-          commands:
-            - sleep 35
-            - echo 123
-            - sleep 10
-            - echo asdf
-        - name: 'Job #2'
-          commands:
-            - sleep 35
-            - echo 123
-            - sleep 10
-            - echo asdf
-  - name: Third block
-    dependencies: []
-    task:
-      jobs:
-        - name: first job
-          commands:
-            - sleep 5
-            - exit 123
-        - name: 'Job #2'
-          commands:
-            - sleep 35
-            - echo 123
-            - sleep 10
-            - echo asdf
-        - name: 'Job #3'
-          commands:
-            - sleep 35
-            - echo 123
-            - sleep 10
-            - echo asdf
+            - echo $SEMAPHORE_WORKFLOW_NUMBER
