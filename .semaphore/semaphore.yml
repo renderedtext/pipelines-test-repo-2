@@ -1,4 +1,4 @@
-version: "v1.0"
+version: v1.0
 name: auto call repo
 agent:
   machine:
@@ -6,9 +6,26 @@ agent:
     os_image: ubuntu1804
 blocks:
   - name: First block
+    run:
+      when: "change_in('../README.md', 'master..$SEMAPHORE_GIT_SHA')"
     task:
       jobs:
         - name: first job
           commands:
-            - echo "First and only command from 'pipelines-test-repo-auto-call' repo"
-            - echo "Another command from 'pipelines-test-repo-auto-call'"
+            - echo 123
+  - name: Second block
+    run:
+      when: "change_in('/README.md', 'master...$SEMAPHORE_GIT_SHA')"
+    task:
+      jobs:
+        - name: first job
+          commands:
+            - echo 123     
+  - name: Third block
+    run:
+      when: "change_in('../.semaphore/', 'master..test')"
+    task:
+      jobs:
+        - name: first job
+          commands:
+            - echo 123
