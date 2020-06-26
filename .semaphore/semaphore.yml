@@ -1,14 +1,31 @@
-version: "v1.0"
-name: auto call repo
+version: v1.0
+name: Hello Docker
 agent:
   machine:
-    type: e1-standard-2
+    type: e1-standard-8
     os_image: ubuntu1804
+
 blocks:
-  - name: First block
+  - name: "Hello"
     task:
       jobs:
-        - name: first job
-          commands:
-            - echo "First and only command from 'pipelines-test-repo-auto-call' repo"
-            - echo "Another command from 'pipelines-test-repo-auto-call'"
+      - name: Hello0
+        priority:
+          - value: 32
+            when: true
+        commands:
+          - sleep 60
+          - echo "Hello"
+
+      - name: Hello1
+        priority:
+          - value: 96
+            when: true
+        commands:
+          - sleep 60
+          - echo "Hello"
+
+      - name: Hello2
+        commands:
+          - sleep 60
+          - echo "Hello"
