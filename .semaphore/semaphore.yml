@@ -10,22 +10,22 @@ blocks:
     task:
       jobs:
       - name: Hello0
-        priority:
-          - value: 32
-            when: true
         commands:
-          - sleep 60
-          - echo "Hello"
-
+          - sleep 180
+          - echo "Hello"        
       - name: Hello1
-        priority:
-          - value: 96
-            when: true
+        execution_time_limit:
+          minutes: 2
         commands:
-          - sleep 60
-          - echo "Hello"
+          - echo "Hello 1"
+  - name: "Hello 2"
+    task:
+      jobs:        
+      - name: Hello 2
+        execution_time_limit:
+          minutes: 1
+        commands:
+          - sleep 180
+          - echo "Hello 2"
 
-      - name: Hello2
-        commands:
-          - sleep 60
-          - echo "Hello"
+
