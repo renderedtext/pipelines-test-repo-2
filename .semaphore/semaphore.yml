@@ -19,6 +19,7 @@ blocks:
           - echo "Hello"        
       - name: Hello1
         commands:
+          - if ! failed ; then echo asdfg ; fi
           - echo "Hello 1"
   - name: "Hello 2"
     task:
