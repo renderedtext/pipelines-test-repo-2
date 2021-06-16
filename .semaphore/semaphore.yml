@@ -1,14 +1,17 @@
-version: "v1.0"
-name: auto call repo
+version: v1.0
+name: Using the parallelism property
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
+
 blocks:
-  - name: First block
+  - name: Example for parallelism
     task:
-      jobs:
-        - name: first job
+        jobs:
+        - name: Parallel job
+          parallelism: 4
           commands:
-            - echo "First and only command from 'pipelines-test-repo-auto-call' repo"
-            - echo "Another command from 'pipelines-test-repo-auto-call'"
+            - echo Job $SEMAPHORE_JOB_INDEX out of $SEMAPHORE_JOB_COUNT
+            - echo Testing...
+            - echo Testing 2
